@@ -10,17 +10,17 @@ config :slack,
   ecto_repos: [Slack.Repo]
 
 # Configures the endpoint
-config :slack, SlackWeb.Endpoint,
+config :slack, Slack.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Z9m28tWzM9JlmL+4M3Plsf2tG8eiHlURqnvTxxSK9PUpIN3IKyYeQVzYwUqU8I5b",
-  render_errors: [view: SlackWeb.ErrorView, accepts: ~w(json)],
+  secret_key_base: "VSgN7zLUCyAdgsio1RbGYEVMACelgTQq6FQozsGJ4vemV0OiO4k0f+Ji+GaW7CN0",
+  render_errors: [view: Slack.ErrorView, accepts: ~w(json)],
   pubsub: [name: Slack.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:user_id]
+  metadata: [:request_id]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

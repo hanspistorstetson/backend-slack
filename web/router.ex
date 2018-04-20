@@ -1,11 +1,11 @@
-defmodule SlackWeb.Router do
-  use SlackWeb, :router
+defmodule Slack.Router do
+  use Slack.Web, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", SlackWeb do
+  scope "/api", Slack do
     pipe_through :api
   end
 end
