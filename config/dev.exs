@@ -26,7 +26,6 @@ config :slack, Slack.Endpoint,
   check_origin: false,
   watchers: []
 
-
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -40,5 +39,5 @@ config :slack, Slack.Repo,
   username: "postgres",
   password: "postgres",
   database: "slack_dev",
-  hostname: "localhost",
+  hostname: "slack_db_1",
   pool_size: 10
